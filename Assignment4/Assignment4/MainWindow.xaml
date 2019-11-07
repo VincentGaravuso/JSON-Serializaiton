@@ -1,0 +1,57 @@
+﻿<Window x:Class="Assignment4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Assignment4"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="682.722" Width="1187.916">
+    <Grid>
+        <Button x:Name="OpenCourseWorkBtn" Content="Open Course Work&#xD;&#xA;JSON File" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="129" Height="49" Click="OpenCourseWorkBtn_Click" UseLayoutRounding="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label Content="Course Work Filename" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Course Name" HorizontalAlignment="Left" Margin="10,95,0,0" VerticalAlignment="Top"/>
+        <Label Content="Overall Grade" HorizontalAlignment="Left" Margin="10,123,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="OverallGradeTb" Margin="97,125,814,0" TextWrapping="Wrap" IsReadOnly="True" IsReadOnlyCaretVisible="True" VerticalAlignment="Top" Height="24"/>
+        <Label Content="Categories" HorizontalAlignment="Left" Margin="10,154,0,0" VerticalAlignment="Top"/>
+        <Label Content="Assignments" HorizontalAlignment="Left" Margin="284,154,0,0" VerticalAlignment="Top"/>
+        <Label Content="Submissions" HorizontalAlignment="Left" Margin="700,154,0,0" VerticalAlignment="Top"/>
+        <ListView HorizontalAlignment="Left" Height="296" Margin="10,180,0,0" VerticalAlignment="Top" Width="269" x:Name="CategoriesListView">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="134.5"/>
+                    <GridViewColumn Header="Percentage" DisplayMemberBinding="{Binding Percentage}" Width="134.5"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView HorizontalAlignment="Left" Height="296" Margin="284,180,0,0" VerticalAlignment="Top" Width="411" x:Name="AssignmentsListView">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="137"/>
+                    <GridViewColumn Header="Description" DisplayMemberBinding="{Binding Description}" Width="137"/>
+                    <GridViewColumn Header="CategoryName" DisplayMemberBinding="{Binding CategoryName}" Width="137"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBox x:Name="CourseNameTb" Margin="97,97,814,0" TextWrapping="Wrap" IsReadOnly="True" IsReadOnlyCaretVisible="True" VerticalAlignment="Top" Height="24"/>
+        <TextBox x:Name="CourseWorkFilenameTb" Margin="144,12,10,0" TextWrapping="Wrap" IsReadOnly="True" IsReadOnlyCaretVisible="True" VerticalAlignment="Top" Height="24"/>
+        <ListView Height="296" Margin="700,180,10,0" VerticalAlignment="Top" x:Name="SubmissionsListView">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="CategoryName" DisplayMemberBinding="{Binding CategoryName}" Width="156"/>
+                    <GridViewColumn Header="AssignmentName" DisplayMemberBinding="{Binding AssignmentName}" Width="156"/>
+                    <GridViewColumn Header="Grade" DisplayMemberBinding="{Binding Grade}" Width="156"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Target Assignment Name" HorizontalAlignment="Left" Margin="10,536,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TargetAssignmentTb" Margin="158,538,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="24" HorizontalAlignment="Left" Width="208"/>
+        <Button x:Name="FindSubmissionBtn" Content="Find Submission" HorizontalAlignment="Left" Margin="158,567,0,0" VerticalAlignment="Top" Width="208" Height="35" UseLayoutRounding="True" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="FindSubmissionBtn_Click"/>
+        <Label Content="Assignment Name" HorizontalAlignment="Left" Margin="472,536,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="AssignmentNameTb" Margin="584,538,10,0" TextWrapping="Wrap" IsReadOnly="True" IsReadOnlyCaretVisible="True" VerticalAlignment="Top" Height="24"/>
+        <Label Content="Category Name" HorizontalAlignment="Left" Margin="472,565,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="CategoryNameTb" Margin="584,567,10,0" TextWrapping="Wrap" IsReadOnly="True" IsReadOnlyCaretVisible="True" VerticalAlignment="Top" Height="24"/>
+        <Label Content="Grade" HorizontalAlignment="Left" Margin="472,594,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="GradeTb" Margin="584,596,10,0" TextWrapping="Wrap" IsReadOnly="True" IsReadOnlyCaretVisible="True" VerticalAlignment="Top" Height="24"/>
+
+    </Grid>
+</Window>
